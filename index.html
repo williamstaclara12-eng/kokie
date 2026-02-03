@@ -1,1 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Be My Valentine ❤️</title>
+</head>
 
+<body style="background-color: pink; overflow: hidden;">
+  <div>
+    <h1>Will you be my valentine?❤️</h1>
+    <button id="Yes">Yes!</button>
+    <button id="No">No</button>
+  </div>
+
+  <style>
+    h1 { font-size: 50px; }
+    button { font-size: 15px; padding: 5px; }
+    div { margin-top: 200px; text-align: center; }
+
+    #No {
+      background-color: red;
+      position: fixed;
+    }
+
+    #Yes {
+      background-color: green;
+      animation: pulse 0.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+  </style>
+
+  <script>
+    document.getElementById("Yes").onclick = () =>
+      alert("I love you! See you soon ❤️");
+
+    const b = document.getElementById("No");
+    b.onmouseenter = () => {
+      b.style.left = Math.random() *
+        (window.innerWidth - b.offsetWidth) + "px";
+      b.style.top = Math.random() *
+        (window.innerHeight - b.offsetHeight) + "px";
+    };
+  </script>
+</body>
+</html>
